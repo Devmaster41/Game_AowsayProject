@@ -16,6 +16,12 @@ public class Enemiescontroler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position,Earth.transform.position,Speed*Time.deltaTime);
+        if(Earth != null)
+            transform.position = Vector2.MoveTowards(transform.position,Earth.transform.position,Speed*Time.deltaTime);
+    }
+
+    private void OnMouseDown()
+    {
+        Destroy(gameObject);
     }
 }
