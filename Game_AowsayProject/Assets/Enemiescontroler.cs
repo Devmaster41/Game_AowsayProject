@@ -22,6 +22,7 @@ public class Enemiescontroler : MonoBehaviour
 
     private void OnMouseDown()
     {
+        ScoreManager.scoreValue++;
         Destroy(gameObject);
     }
 }
