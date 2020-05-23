@@ -5,12 +5,14 @@ using UnityEngine;
 public class Baria : MonoBehaviour
 {
     public GameObject Baria_;
+    public GameObject time_ ;
     static  public bool _Baria = true;
     private float n;
     // Start is called before the first frame update
     void Start()
     {
         Baria_.gameObject.SetActive(false);
+        time_.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class Baria : MonoBehaviour
         {
             n = 0;
             _Baria = true;
+            time_.gameObject.SetActive(false);
         }        
     }
 
@@ -32,6 +35,7 @@ public class Baria : MonoBehaviour
         if (_Baria)
         { 
             Baria_.gameObject.SetActive(true);
+            time_.gameObject.SetActive(true);
             _Baria = false;
         }
             
