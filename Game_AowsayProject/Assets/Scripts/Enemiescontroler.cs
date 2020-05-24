@@ -5,10 +5,12 @@ using UnityEngine;
 public class Enemiescontroler : MonoBehaviour
 {
     public GameObject Earth;
+    public static GameObject Metao_;
     private int Speed = 3;
     // Start is called before the first frame update
     void Start()
     {
+        Metao_ = this.gameObject;
         Earth = GameObject.Find("Earth");
         transform.up = new Vector2(transform.position.x, transform.position.y);
     }
@@ -18,12 +20,15 @@ public class Enemiescontroler : MonoBehaviour
     {
         if(Earth != null)
             transform.position = Vector2.MoveTowards(transform.position,Earth.transform.position,Speed*Time.deltaTime);
+        if (Valuse._Metao)
+            Destroy(gameObject);
     }
 
     private void OnMouseDown()
     {
         ScoreManager.scoreValue++;
         Destroy(gameObject);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

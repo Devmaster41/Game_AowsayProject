@@ -7,7 +7,7 @@ public class Baria : MonoBehaviour
     public GameObject Baria_;
     public GameObject time_ ;
     static  public bool _Baria = true;
-    private float n;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +19,12 @@ public class Baria : MonoBehaviour
     void Update()
     {
         if(_Baria == false)
-            n += Time.deltaTime;
-        if (n > 10)
+            Valuse.Count += Time.deltaTime;
+        if (Valuse.Count > 10)
             Baria_.gameObject.SetActive(false);
-        if (n >= 30)
+        if (Valuse.Count >= 30)
         {
-            n = 0;
+            Valuse.Count = 0;
             _Baria = true;
             time_.gameObject.SetActive(false);
         }        

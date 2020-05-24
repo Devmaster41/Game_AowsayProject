@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.UIElements;
 using UnityEngine;
 
 public class Playercontroler : MonoBehaviour
 {
     Vector3 target = Vector3.back;
-    public float Speed;
+    public GameObject End;
+    public float speed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +17,16 @@ public class Playercontroler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.RotateAround(transform.position,target,Speed*Time.deltaTime );
+        transform.RotateAround(transform.position, target, speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Metao")
-            Destroy(gameObject);
+        if (collision.gameObject.name == "Metao") 
+        {
+            this.gameObject.SetActive(false);
+            End.gameObject.SetActive(true);
+            Valuse._Metao = true;
+        }
     }
 }

@@ -7,14 +7,16 @@ public class SceneMager : MonoBehaviour
     public GameObject StartScene;
     public GameObject Baria;
     public GameObject Earth;
-    static public bool StartGame;
+    public GameObject Wave;
+    public GameObject End;
     // Start is called before the first frame update
     void Start()
     {
-        StartGame = false;
+        Wave.gameObject.SetActive(false);
         StartScene.gameObject.SetActive(true);
         Baria.gameObject.SetActive(false);
         Earth.gameObject.SetActive(false);
+        End.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class SceneMager : MonoBehaviour
 
     private void OnMouseDown()
     {
-        StartGame = true;
+        Wave.gameObject.SetActive(true);
         StartScene.gameObject.SetActive(false);
         Baria.gameObject.SetActive(true);
         Earth.gameObject.SetActive(true);

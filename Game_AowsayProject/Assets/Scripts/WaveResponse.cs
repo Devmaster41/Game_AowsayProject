@@ -20,16 +20,14 @@ public class WaveResponse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneMager.StartGame)
-        {
-            GameObject randomPoint = pointer[Random.Range(0, pointer.Length)];
-            count += Time.deltaTime;
-            if (count > waveTime)
-            {
-                Instantiate(enemy, randomPoint.transform.position, Quaternion.identity);
-                count = 0f;
-            }
-        }
+           GameObject randomPoint = pointer[Random.Range(0, pointer.Length)];
+           count += Time.deltaTime;
+           if (count > waveTime)
+           {
+               Instantiate(enemy, randomPoint.transform.position, Quaternion.identity);
+               count = 0f;
+           }
     }
-
 }
+
+
